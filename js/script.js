@@ -27,10 +27,18 @@ for (var i = 0; i < timeBlocks.length; i++) {
 // Past = gray
 // Present = red
 // Future = green
-// Create save button for each time block
+function colorCodeTimeBlocks() {
+    var currentHour = dayjs().hour();
+    $('.hour').each(function () {
+        var hour = parseInt($(this).text());
+        if (hour < currentHour) {
+            $(this).siblings('.description').addClass('past');
+        } else if (hour === currentHour) {
+            $(this).siblings('.description').addClass('present');
+        } else {
+            $(this).siblings('.description').addClass('future');
+        }
+    });
+}
+colorCodeTimeBlocks();
 
-// Display saved events after page refresh
-
-// Clear button should clear all events from local storage
-
-// Display cleared events after page refresh
