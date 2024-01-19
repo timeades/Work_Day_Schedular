@@ -10,7 +10,7 @@ var timeBlocks = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
 // Display time block rows in order of time
 for (var i = 0; i < timeBlocks.length; i++) {
     var timeBlock = timeBlocks[i];
-    var timeBlockRow = $('<div class="row">');
+    var timeBlockRow = $('<div class="row" style =>');
     var timeBlockHour = $('<div class="col-1 hour">').text(timeBlock);
     var timeBlockText = $('<textarea class="col-10 description">');
     var timeBlockSaveBtn = $('<button class="col-1 saveBtn">'); // add save image from fontawesome to the button
@@ -41,4 +41,24 @@ function colorCodeTimeBlocks() {
     });
 }
 colorCodeTimeBlocks();
+
+// Display the items from local storage on the page when the page is refreshed
+function displayItemsFromLocalStorage() {
+    $('.hour').each(function () {
+        var timeBlockHour = $(this).text();
+        var timeBlockText = localStorage.getItem(timeBlockHour);
+        $(this).siblings('.description').val(timeBlockText);
+    });
+}
+displayItemsFromLocalStorage();
+
+// Add a Clear button at the bottom of the schedule that clears all events from the calendar when the clear button is clicked
+var clearBtn = $('<button class="clearBtn" style="margin-top: 25px" >Clear Schedual</button>');
+$('.container').append(clearBtn);
+clearBtn.on('click', function () {
+    localStorage.clear();
+    $('.description').val('');
+});
+
+
 
