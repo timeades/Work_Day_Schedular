@@ -68,7 +68,7 @@ header {
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 35px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -76,7 +76,9 @@ header {
   background-color: #DB1F48;
   color: #fff;
   transition: background-color 1s;
-  border-radius: 15px; 
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
 }
 
 .clearBtn:hover {
