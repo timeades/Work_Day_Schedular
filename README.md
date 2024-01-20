@@ -22,5 +22,5 @@ Bottom of the schedual page
 * Clone the repository
 * Open the index.html file in your browser.
 
-or you can view a deployed version here: 
+or you can view a deployed version here: https://timeades.github.io/Work_Day_Schedular/
 
