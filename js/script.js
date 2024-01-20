@@ -1,9 +1,9 @@
 // Display the current date and time in <#currentDay> <p> tag using day.js
-var rightNow = dayjs().format('dddd, MMMM D, YYYY h:mm:ss a');
+var rightNow = dayjs().format('dddd, MMMM D');
 $('#currentDay').text(rightNow);
-// Present time blocks for from (6am - 10pm) with standard business hours (9am - 5pm)
-var timeBlocks = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm',
-'2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'];
+// Present time blocks for from (06:00 - 22:00) with standard business hours (09:00 - 17:00)
+var timeBlocks = ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00',
+'14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
 // Loop through time blocks
 // Create time blocks for each hour of the day and build out the time block rows with bootstrap grid system
 // and add them to index.html using jQuery in the div with class="container"
@@ -13,7 +13,7 @@ for (var i = 0; i < timeBlocks.length; i++) {
     var timeBlockRow = $('<div class="row" style =>');
     var timeBlockHour = $('<div class="col-1 hour">').text(timeBlock);
     var timeBlockText = $('<textarea class="col-10 description">');
-    var timeBlockSaveBtn = $('<button class="col-1 saveBtn">'); // add save image from fontawesome to the button
+    var timeBlockSaveBtn = $('<button class="col-1 saveBtn"><i class="fa-solid fa-floppy-disk"></i></button>'); // Font Awesome icon
     timeBlockRow.append(timeBlockHour, timeBlockText, timeBlockSaveBtn);
     $('.container').append(timeBlockRow);
     timeBlockSaveBtn.on('click', function () {
@@ -53,8 +53,10 @@ function displayItemsFromLocalStorage() {
 displayItemsFromLocalStorage();
 
 // Add a Clear button at the bottom of the schedule that clears all events from the calendar when the clear button is clicked
-var clearBtn = $('<button class="clearBtn" style="margin-top: 25px" >Clear Schedual</button>');
-$('.container').append(clearBtn);
+var clearBtn = $('<button class="clearBtn" style="margin-top: 25px" >Clear Schedule</button>');
+var clearBtnContainer = $('<div class="clearBtnContainer"></div>');
+clearBtnContainer.append(clearBtn);
+$('.container').append(clearBtnContainer);
 clearBtn.on('click', function () {
     localStorage.clear();
     $('.description').val('');
