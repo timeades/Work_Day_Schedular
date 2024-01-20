@@ -1,7 +1,7 @@
 // Display the current date and time in <#currentDay> <p> tag using day.js
 var rightNow = dayjs().format('dddd, MMMM D');
 $('#currentDay').text(rightNow);
-// Present time blocks for from (06:00 - 22:00) with standard business hours (09:00 - 17:00)
+// Present time blocks from (06:00 - 22:00) in an array.
 var timeBlocks = ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00',
 '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
 // Loop through time blocks
