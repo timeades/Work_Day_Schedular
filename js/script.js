@@ -13,7 +13,7 @@ for (var i = 0; i < timeBlocks.length; i++) {
     var timeBlockRow = $('<div class="row" style =>');
     var timeBlockHour = $('<div class="col-1 hour">').text(timeBlock);
     var timeBlockText = $('<textarea class="col-10 description">');
-    var timeBlockSaveBtn = $('<button class="col-1 saveBtn"><i class="fa-solid fa-floppy-disk"></i></button>'); // Font Awesome icon
+    var timeBlockSaveBtn = $('<button class="col-1 saveBtn"><i class="fas fa-save fa-lg"></i></button>'); // Font Awesome icon
     timeBlockRow.append(timeBlockHour, timeBlockText, timeBlockSaveBtn);
     $('.container').append(timeBlockRow);
     timeBlockSaveBtn.on('click', function () {
